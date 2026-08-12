@@ -1,0 +1,26 @@
+-- ATIVIDADE PORTAL ESCOLAR
+CREATE DATABASE portal_escolar;
+USE portal_escolar;
+
+CREATE TABLE atividades (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    categoria VARCHAR(50),
+    turno VARCHAR(20),
+    vagas INT
+);
+
+INSERT INTO atividades (nome, categoria, turno, vagas) VALUES 
+('Clube de Robótica', 'Tecnologia', 'Tarde', 20),
+('Campeonato de Jogos', 'Jogos', 'Tarde', 16),
+('Oficina de Fotografia', 'Arte', 'Manhã', 15),
+('Clube de Música', 'Cultura', 'Tarde', 10);
+
+INSERT INTO atividades (nome, categoria, turno, vagas) VALUES ('Aula de Inglês', 'Idiomas', 'Manhã', 25);
+
+-- CONSULTAS
+SELECT * FROM atividades;
+SELECT * FROM atividades WHERE categoria = 'Tecnologia';
+UPDATE atividades SET vagas = 18 WHERE nome = 'Clube de Música';
+SELECT * FROM atividades ORDER BY nome;
+SELECT COUNT(*) AS total_atividades FROM atividades;
